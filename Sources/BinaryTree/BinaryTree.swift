@@ -323,11 +323,12 @@ extension BinaryTree {
       let (tree, old) = recursiveInsert(element)
       switch tree {
          case .empty: return false
-         default: break
+         case let .node(record, left, right):
+            self = .node(record, left, right)
       }
       return old == nil
    }
-   
+
    /// Recursive helper function for insert(element) which should
    /// not be called directly.
    private func recursiveInsert(_ element: R) -> (tree: BinaryTree, old: R?) {
