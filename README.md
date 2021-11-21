@@ -53,6 +53,10 @@ A number of methods can be used to examing records in the tree without changing 
 // fetches the immediate neighbours, left and right, of where a record containing the key would be
 // (whether or not such a record is present). Duplicates of key are ignored.
 
+### Map
+    public func map<T>(_ transform:(R) -> T) -> [T]
+// produces an array by transforming a record using a closure
+
 ### Tree Inspection
 Finally a number of methods can be used to examine the tree in its entirety:
 

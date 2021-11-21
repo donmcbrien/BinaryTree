@@ -461,14 +461,6 @@ extension BinaryTree {
 }
 
 extension BinaryTree {
-   public func array() -> [R] {
-      switch self {
-         case .empty: return [R]()
-         case let .node(record, left, right):
-            return left.array() + [record] + right.array()
-      }
-   }
-   
    public func map<T>(_ transform:(R) -> T) -> [T] {
       switch self {
          case .empty: return [T]()
