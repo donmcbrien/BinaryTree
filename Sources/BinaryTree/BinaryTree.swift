@@ -468,6 +468,14 @@ extension BinaryTree {
             return left.array() + [record] + right.array()
       }
    }
+   
+   func map<T>(_ transform:(R) -> T) -> [T] {
+      switch self {
+         case .empty: return [T]()
+         case let .node(record, left, right):
+            return left.map(transform) + [transform(record)] + right.map(transform)
+      }
+   }
 }
 
 //MARK: - ENUMs
