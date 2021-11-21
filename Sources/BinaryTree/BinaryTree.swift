@@ -469,7 +469,7 @@ extension BinaryTree {
       }
    }
    
-   func map<T>(_ transform:(R) -> T) -> [T] {
+   public func map<T>(_ transform:(R) -> T) -> [T] {
       switch self {
          case .empty: return [T]()
          case let .node(record, left, right):
